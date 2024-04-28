@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'storefront3',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'aman1993'
+        'PASSWORD': 'p@assword'
     }
 }
 
@@ -179,3 +179,6 @@ DEFAULT_FROM_EMAIL = 'from@moshbuy.com'
 ADMINS = [
     ('Mosh', 'admin@moshbuy.com')
 ]
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379/1'
