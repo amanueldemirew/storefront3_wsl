@@ -16,9 +16,13 @@ pillow = "*"
 django-templated-mail = "*"
 redis = "*"
 celery = "*"
+flower = "*"
 
 [dev-packages]
 autopep8 = "*"
+pytest = "*"
+pytest-django = "*"
+pytest-watch = "*"
 
 [requires]
 python_version = "3.9.19"

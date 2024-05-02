@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 from datetime import timedelta
-
+from celery.schedules import crontab
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': 'storefront3',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'p@assword'
+        'PASSWORD': 'P@assword'
     }
 }
 
@@ -127,9 +127,8 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
-
-USE_L10N = True
+# USE_I18N = True  # No longer necessary, will be enabled by default
+# USE_L10N = True  # No longer necessary, will be enabled by default
 
 USE_TZ = True
 
@@ -182,3 +181,12 @@ ADMINS = [
 
 
 CELERY_BROKER_URL = 'redis://localhost:6379/1'
+CELERY_BEAT_SCHEDULE = {
+    'notify_customer': {
+        'task': 'playground.task.notify_customer',
+        'schedule': 5,
+        'args': ['Hello World'],
+    }
+}
+
+
