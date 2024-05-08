@@ -219,4 +219,4 @@ LOGGING = {
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['storefront3-wsl.onrender.com']
+ALLOWED_HOSTS = ["storefront3-wsl.onrender.com"]
