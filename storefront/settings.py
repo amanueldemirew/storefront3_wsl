@@ -44,9 +44,12 @@ INSTALLED_APPS = [
     'core',
 ]
 
+
+
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'silk.middleware.SilkyMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -221,3 +224,9 @@ LOGGING = {
         }
     }
 }
+
+# settings.py
+
+DEBUG = True
+
+ALLOWED_HOSTS = []
